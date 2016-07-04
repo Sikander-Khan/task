@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Style/Style.css" rel="stylesheet" />
+  <script src="jquery-3.0.0.min.js"></script>
+		<script src="Chart.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!--Header Start-->
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="#" class="">
+                                <i class="fa fa-home"></i>
+                                <span class="label">Fitzory</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="">
+                                <i class="fa fa-user  squoare-icon"></i>
+                                <span class="label">Jane</span>
+                            </a>
+                        </li>
+                        <li class="user user-menu">
+                            <a href="#" class="">
+                                <i class="fa fa-sign-out"></i>
+                                <span class="hidden-xs">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--Header End-->
+        <!--Side Bar Start-->
+        <aside class="main-sidebar">
+            <section class="sidebar" style="height: auto;">
+                <ul class="sidebar-menu">
+                    <li class="">
+                        <a href="#">
+                            <i class="fa fa-home"></i> <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-area-chart"></i> <span>Reporting</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <!--Side Bar End-->
+        <!--Content Start-->
+
+        <div class="content-wrapper" style="min-height: 916px;">
+            <section class="content-header">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1>
+                            Retail Dashboard
+                        </h1>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn-default calenderbtn">Day</button>
+                        <button type="button" class="btn-default calenderbtn">Week</button>
+                        <button type="button" class="btn-default calenderbtn active">Month</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button type="button" class="btn-default calenderbtn active"><</button>
+                        <input type="text"  class="calenderbtn calenderinput" value="1st Dec 2014 - 31st Dec 2014"/>
+                        <button type="button" class="btn-default calenderbtn active">></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Revenue</label>
+                                <p>
+                                    <span>$283k</span>
+                                </p>
+                                <p class="previousmonth">
+                                        <i class="fa fa-sort-asc"></i>
+                                        77% Previous Month
+                                </p>
+                              
+                                <div class="progress">
+    <div  class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" color="black"> R283K</p>
+    </div>
+</div>  
+                               <canvas class="relativecanvas" id="chart1" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [110000, 150000, 100000, 125000, 180000, 250000, ]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart1').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Sale Count</label>
+                                <p>
+                                    <span>603</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    74% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > 603</p>
+    </div>
+</div>
+
+<canvas class="relativecanvas" id="chart2" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [250, 300, 200, 220, 350, 650, ]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart2').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Customer Count</label>
+                                <p>
+                                    <span>3</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    50% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > 5</p>
+    </div>
+</div>
+
+<canvas class="relativecanvas" id="chart3" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [0, 2.2, 0, 0, 2.2, 3.2, ]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart3').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Gross Profit</label>
+                                <p>
+                                    <span>$145k</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    74% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > R145K</p>
+    </div>
+</div>
+
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Discount</label>
+                                <p>
+                                    <span>$6.26k</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    706% Previous Month
+                                </p>
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > R6.26K</p>
+    </div>
+</div>  <canvas class="relativecanvas" id="chart5" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [2100, 4100, 2000, 0, 500, 6000]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart5').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Discount %</label>
+                                <p>
+                                    <span>2.17%</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    347% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > 2.17%</p>
+    </div>
+</div>  <canvas class="relativecanvas" id="chart6" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [ 0.02, 0.04, 0.011, 0 , 0.001, 0.022]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart6').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Basket Value</label>
+                                <p>
+                                    <span>$463</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    2% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > R283K</p>
+    </div>
+</div>
+
+<canvas class="relativecanvas" id="chart7" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [0, 420, 400, 450, 460, 470]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart7').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 ">
+                            <div class="dashboardbox">
+                                <label class="">Basket Size</label>
+                                <p>
+                                    <span>2.26</span>
+                                </p>
+                                <p class="previousmonth">
+                                    <i class="fa fa-sort-asc"></i>
+                                    1% Previous Month
+                                </p>
+
+                                <div class="progress">
+    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+        <p style="display:inline" class="progresstext" >Parkhurst
+        
+        </p>  <p style="display:inline" class="progresstextleft" > 2.26</p>
+    </div>
+</div>
+
+<canvas class="relativecanvas" id="chart8" width="220" height="170"></canvas>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels: ["Jul 14", "Aug 14", "Sep 14", "Oct 14", "Nov 14", "Dec 14", ""],
+        datasets: [
+                {
+                    fillColor: " #abccb0",
+                    strokeColor: "#36AC39",
+                    pointColor: "#36AC39",
+                    pointStrokeColor: "#9DB86D",
+                    data: [0, 1.1, 1, 2.4, 1.5, 1.7]
+                }
+            ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('chart8').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+           
+        </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!--Content End-->
+
+
+    </div>
+</body>
+</html>
